@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 enum Stato {
     case IDDLE
     case START
@@ -17,7 +18,7 @@ enum Stato {
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var button: RoundButton!
+    @IBOutlet weak var buttonStart: RoundButton!
     var aStato = Stato.IDDLE
     
     override func viewDidLoad() {
@@ -34,25 +35,28 @@ class ViewController: UIViewController {
         
         switch aStato {
         case .IDDLE:
-            button.fillColor = UIColor.red
-            button.borderColor = UIColor.black
-            button.label = "STOP"
+            buttonStart.fillColor = UIColor.red
+            buttonStart.borderColor = UIColor.black
+            buttonStart.labelColor = UIColor.black
+            buttonStart.label = "STOP"
             aStato = Stato.START
             break
         case .START:
-            button.fillColor = UIColor.black
-            button.borderColor = UIColor.red
-            button.label = "START"
+            buttonStart.fillColor = UIColor.black
+            buttonStart.borderColor = UIColor.red
+            buttonStart.labelColor = UIColor.red
+            buttonStart.label = "START"
             aStato = Stato.STOP
             break
         case .STOP:
-            button.fillColor = UIColor.red
-            button.borderColor = UIColor.black
-            button.label = "STOP"
+            buttonStart.fillColor = UIColor.red
+            buttonStart.borderColor = UIColor.black
+            buttonStart.labelColor = UIColor.black
+            buttonStart.label = "STOP"
             aStato = Stato.START
             break
         default:
-            button.backgroundColor = UIColor.red
+            print("buttonStart:", aStato)
             break
             
         }

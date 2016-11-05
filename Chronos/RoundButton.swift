@@ -38,6 +38,11 @@ import UIKit
     }
     
     
+    @IBInspectable var labelColor: UIColor = UIColor.clear {
+        didSet {
+            
+            setTitleColor(labelColor, for: .normal)        }
+    }
     
     
     override open func layoutSubviews() {
