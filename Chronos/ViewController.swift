@@ -19,7 +19,11 @@ enum Stato {
 class ViewController: UIViewController {
     
     @IBOutlet weak var buttonStart: RoundButton!
+    @IBOutlet weak var label: UILabel!
+    
     var aStato = Stato.IDDLE
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     
     @IBAction func buttonPressed(_ sender: AnyObject) {

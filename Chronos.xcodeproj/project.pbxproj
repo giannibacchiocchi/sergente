@@ -11,6 +11,7 @@
 		0F9EB8061DCE169F00696D2A /* DS-DIGII.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0F9EB8021DCE169F00696D2A /* DS-DIGII.TTF */; };
 		0F9EB8071DCE169F00696D2A /* DS-DIGIB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0F9EB8031DCE169F00696D2A /* DS-DIGIB.TTF */; };
 		0F9EB8081DCE169F00696D2A /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0F9EB8041DCE169F00696D2A /* DS-DIGI.TTF */; };
+		0F9EB80A1DCE743300696D2A /* LabelDigital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9EB8091DCE743300696D2A /* LabelDigital.swift */; };
 		0FA48F271DC900C200D1580D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA48F261DC900C200D1580D /* AppDelegate.swift */; };
 		0FA48F291DC900C200D1580D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA48F281DC900C200D1580D /* ViewController.swift */; };
 		0FA48F2C1DC900C200D1580D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA48F2A1DC900C200D1580D /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		0F9EB8021DCE169F00696D2A /* DS-DIGII.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DS-DIGII.TTF"; path = "../../ds_digital/DS-DIGII.TTF"; sourceTree = "<group>"; };
 		0F9EB8031DCE169F00696D2A /* DS-DIGIB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DS-DIGIB.TTF"; path = "../../ds_digital/DS-DIGIB.TTF"; sourceTree = "<group>"; };
 		0F9EB8041DCE169F00696D2A /* DS-DIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DS-DIGI.TTF"; path = "../../ds_digital/DS-DIGI.TTF"; sourceTree = "<group>"; };
+		0F9EB8091DCE743300696D2A /* LabelDigital.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelDigital.swift; sourceTree = "<group>"; };
 		0FA48F231DC900C200D1580D /* Chronos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA48F261DC900C200D1580D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FA48F281DC900C200D1580D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				0FA48F551DC9016D00D1580D /* RoundButton.swift */,
+				0F9EB8091DCE743300696D2A /* LabelDigital.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				0FA48F561DC9016D00D1580D /* RoundButton.swift in Sources */,
 				0FA48F291DC900C200D1580D /* ViewController.swift in Sources */,
 				0FA48F271DC900C200D1580D /* AppDelegate.swift in Sources */,
+				0F9EB80A1DCE743300696D2A /* LabelDigital.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
