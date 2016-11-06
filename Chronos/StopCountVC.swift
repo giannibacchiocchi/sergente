@@ -16,18 +16,26 @@ enum Stato {
     case RESET
 }
 
-class ViewController: UIViewController {
+
+var aStato = Stato.IDDLE
+
+
+class StopCountVC: UIViewController {
     
     @IBOutlet weak var buttonStart: RoundButton!
     @IBOutlet weak var buttonReset: RoundButton!
     @IBOutlet weak var label: UILabel!
     
-    var aStato = Stato.IDDLE
+
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,6 +56,7 @@ class ViewController: UIViewController {
             buttonReset.isEnabled = false
             
             label.text = "99:99:99"
+
             
             break
         case .START:
@@ -91,8 +100,7 @@ class ViewController: UIViewController {
         label.text = "00:00:00"
         
     }
-    
-    
+        
     
     
     

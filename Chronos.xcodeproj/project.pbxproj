@@ -13,7 +13,7 @@
 		0F9EB8081DCE169F00696D2A /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0F9EB8041DCE169F00696D2A /* DS-DIGI.TTF */; };
 		0F9EB80A1DCE743300696D2A /* LabelDigital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9EB8091DCE743300696D2A /* LabelDigital.swift */; };
 		0FA48F271DC900C200D1580D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA48F261DC900C200D1580D /* AppDelegate.swift */; };
-		0FA48F291DC900C200D1580D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA48F281DC900C200D1580D /* ViewController.swift */; };
+		0FA48F291DC900C200D1580D /* StopCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA48F281DC900C200D1580D /* StopCountVC.swift */; };
 		0FA48F2C1DC900C200D1580D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA48F2A1DC900C200D1580D /* Main.storyboard */; };
 		0FA48F2E1DC900C200D1580D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA48F2D1DC900C200D1580D /* Assets.xcassets */; };
 		0FA48F311DC900C200D1580D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA48F2F1DC900C200D1580D /* LaunchScreen.storyboard */; };
@@ -47,7 +47,7 @@
 		0F9EB8091DCE743300696D2A /* LabelDigital.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelDigital.swift; sourceTree = "<group>"; };
 		0FA48F231DC900C200D1580D /* Chronos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA48F261DC900C200D1580D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0FA48F281DC900C200D1580D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FA48F281DC900C200D1580D /* StopCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCountVC.swift; sourceTree = "<group>"; };
 		0FA48F2B1DC900C200D1580D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FA48F2D1DC900C200D1580D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FA48F301DC900C200D1580D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				0F9EB8001DCE164D00696D2A /* Fonts */,
 				0FA48F541DC9011C00D1580D /* Class */,
 				0FA48F261DC900C200D1580D /* AppDelegate.swift */,
-				0FA48F281DC900C200D1580D /* ViewController.swift */,
+				0FA48F281DC900C200D1580D /* StopCountVC.swift */,
 				0FA48F2A1DC900C200D1580D /* Main.storyboard */,
 				0FA48F2D1DC900C200D1580D /* Assets.xcassets */,
 				0FA48F2F1DC900C200D1580D /* LaunchScreen.storyboard */,
@@ -301,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA48F561DC9016D00D1580D /* RoundButton.swift in Sources */,
-				0FA48F291DC900C200D1580D /* ViewController.swift in Sources */,
+				0FA48F291DC900C200D1580D /* StopCountVC.swift in Sources */,
 				0FA48F271DC900C200D1580D /* AppDelegate.swift in Sources */,
 				0F9EB80A1DCE743300696D2A /* LabelDigital.swift in Sources */,
 			);
