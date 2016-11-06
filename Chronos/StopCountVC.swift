@@ -26,8 +26,9 @@ class StopCountVC: UIViewController {
     @IBOutlet weak var buttonReset: RoundButton!
     @IBOutlet weak var label: UILabel!
     
-
-
+    var stopCount : StopCount!
+    
+   // let stopCount = StopCount.sharedInstance
 
     
     override func viewDidLoad() {
@@ -54,7 +55,7 @@ class StopCountVC: UIViewController {
             buttonStart.label = "STOP"
             aStato = Stato.START
             buttonReset.isEnabled = false
-            
+            StopCount.start()
             label.text = "99:99:99"
 
             
