@@ -19,11 +19,12 @@ enum Stato {
 class ViewController: UIViewController {
     
     @IBOutlet weak var buttonStart: RoundButton!
+    @IBOutlet weak var buttonReset: RoundButton!
     @IBOutlet weak var label: UILabel!
     
     var aStato = Stato.IDDLE
-    
-    
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,7 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    @IBAction func buttonPressed(_ sender: AnyObject) {
+    @IBAction func buttonStartPressed(_ sender: AnyObject) {
         
         switch aStato {
         case .IDDLE:
@@ -46,6 +45,10 @@ class ViewController: UIViewController {
             buttonStart.labelColor = UIColor.black
             buttonStart.label = "STOP"
             aStato = Stato.START
+            buttonReset.isEnabled = false
+            
+            label.text = "99:99:99"
+            
             break
         case .START:
             buttonStart.fillColor = UIColor.black
@@ -53,6 +56,7 @@ class ViewController: UIViewController {
             buttonStart.labelColor = UIColor.red
             buttonStart.label = "START"
             aStato = Stato.STOP
+            buttonReset.isEnabled = true
             break
         case .STOP:
             buttonStart.fillColor = UIColor.red
@@ -60,6 +64,7 @@ class ViewController: UIViewController {
             buttonStart.labelColor = UIColor.black
             buttonStart.label = "STOP"
             aStato = Stato.START
+            buttonReset.isEnabled = false
             break
         default:
             print("buttonStart:", aStato)
@@ -68,6 +73,29 @@ class ViewController: UIViewController {
         }
         
     }
+    
+
+    @IBAction func buttonResetPressed(_ sender: AnyObject) {
+        
+        
+        aStato = Stato.IDDLE
+        
+        buttonStart.fillColor = UIColor.black
+        buttonStart.borderColor = UIColor.red
+        buttonStart.labelColor = UIColor.red
+        buttonStart.label = "START"
+        
+        buttonReset.isEnabled = false
+        
+        
+        label.text = "00:00:00"
+        
+    }
+    
+    
+    
+    
+    
     
     override var prefersStatusBarHidden : Bool {
         return true
