@@ -26,16 +26,14 @@ class StopCountVC: UIViewController {
     @IBOutlet weak var buttonReset: RoundButton!
     @IBOutlet weak var label: UILabel!
     
-    var stopCount : StopCount!
-    
-   // let stopCount = StopCount.sharedInstance
+
+    let stopCount = StopCount.sharedInstance
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(StopCountVC.updateNotificationSentLabel), name: NSNotification.Name(rawValue: TimerUpdated), object: stopCount)
         
     }
     
@@ -55,10 +53,8 @@ class StopCountVC: UIViewController {
             buttonStart.label = "STOP"
             aStato = Stato.START
             buttonReset.isEnabled = false
-            StopCount.start()
-            label.text = "99:99:99"
-
-            
+            stopCount.start()
+          //  label.text = "99:99:99"
             break
         case .START:
             buttonStart.fillColor = UIColor.black
@@ -67,6 +63,7 @@ class StopCountVC: UIViewController {
             buttonStart.label = "START"
             aStato = Stato.STOP
             buttonReset.isEnabled = true
+            stopCount.stop()
             break
         case .STOP:
             buttonStart.fillColor = UIColor.red
@@ -75,6 +72,7 @@ class StopCountVC: UIViewController {
             buttonStart.label = "STOP"
             aStato = Stato.START
             buttonReset.isEnabled = false
+            stopCount.start()            
             break
         default:
             print("buttonStart:", aStato)
@@ -103,13 +101,24 @@ class StopCountVC: UIViewController {
     }
         
     
-    
-    
-    
-    override var prefersStatusBarHidden : Bool {
-        return true
+    open func updateNotificationSentLabel() {
+        
+        var ti = NSInteger(stopCount.getTimer())
+ //       var ms = Int((stopCount.getTimer().truncatingRemainder(dividingBy: 1)) * 1000)
+        
+        var seconds = ti % 60
+        var minutes = (ti / 60) % 60
+        var hours = (ti / 3600)
+        
+
+ //       let label = String(format: "%0.2d:%0.2d:%0.2d.%0.3d",hours,minutes,seconds,ms)
+          label.text = String(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
+        
+
+  //      print("label:", label)
+        
+ 
     }
-    
 }
 
 

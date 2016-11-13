@@ -21,6 +21,7 @@
 		0FA48F471DC900C200D1580D /* ChronosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA48F461DC900C200D1580D /* ChronosUITests.swift */; };
 		0FA48F561DC9016D00D1580D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA48F551DC9016D00D1580D /* RoundButton.swift */; };
 		0FE680821DCF91C400A8507E /* StopCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE680811DCF91C400A8507E /* StopCount.swift */; };
+		0FE680841DCFC80900A8507E /* NSTimeInterval+TimeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE680831DCFC80900A8507E /* NSTimeInterval+TimeComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		0FA48F481DC900C200D1580D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FA48F551DC9016D00D1580D /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		0FE680811DCF91C400A8507E /* StopCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopCount.swift; sourceTree = "<group>"; };
+		0FE680831DCFC80900A8507E /* NSTimeInterval+TimeComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+TimeComponents.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				0FA48F551DC9016D00D1580D /* RoundButton.swift */,
 				0F9EB8091DCE743300696D2A /* LabelDigital.swift */,
 				0FE680811DCF91C400A8507E /* StopCount.swift */,
+				0FE680831DCFC80900A8507E /* NSTimeInterval+TimeComponents.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA48F561DC9016D00D1580D /* RoundButton.swift in Sources */,
+				0FE680841DCFC80900A8507E /* NSTimeInterval+TimeComponents.swift in Sources */,
 				0FE680821DCF91C400A8507E /* StopCount.swift in Sources */,
 				0FA48F291DC900C200D1580D /* StopCountVC.swift in Sources */,
 				0FA48F271DC900C200D1580D /* AppDelegate.swift in Sources */,

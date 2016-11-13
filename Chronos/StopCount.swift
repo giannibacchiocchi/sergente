@@ -9,16 +9,40 @@
 import Foundation
 
 
-class StopCount {
+let TimerUpdated = "StopCountTimerUpdated";
+
+
+class StopCount : NSObject {
+
+    class var sharedInstance : StopCount {
+        struct Static {
+            static let instance : StopCount = StopCount()
+        }
+        return Static.instance
+    }
+    
+ //   private override init() {
+        
+ //   }
+ 
+    public convenience init(refreshInterval: TimeInterval) {
+        self.init()
+        self.refreshInterval = refreshInterval
+    }
     
     fileprivate var timer = Timer()
     fileprivate var startTime = TimeInterval(0)
+    fileprivate var accumulatedTime = TimeInterval(0)
     fileprivate var elapsedSinceLastRefresh = TimeInterval(0)
     
  //   static let sharedInstance = StopCount()
     
-    open var refreshInterval = TimeInterval(1)
+    open var elapsedTime: TimeInterval {
+        return elapsedSinceLastRefresh + accumulatedTime
+    }
+
     
+    open var refreshInterval = TimeInterval(1)
     
     
     open func start() {
@@ -36,25 +60,28 @@ class StopCount {
     
     open func stop() {
         timer.invalidate()
+        accumulatedTime = elapsedTime
         elapsedSinceLastRefresh = 0
     }
     
     open func reset() {
         timer.invalidate()
         elapsedSinceLastRefresh = 0
+        accumulatedTime = 0        
     }
 
-    @objc func refreshTime() {
+    func refreshTime() {
         let refreshTime = Date.timeIntervalSinceReferenceDate
-        self.elapsedSinceLastRefresh = (refreshTime - startTime)
-        
-        // notifica
-        
+        self.elapsedSinceLastRefresh = (refreshTime - startTime)        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: TimerUpdated), object: self)
+    
     }
     
     
     
-    open func getTimer() {
+    open func getTimer() -> TimeInterval  {
+        
+        return elapsedSinceLastRefresh
         
     }
     
