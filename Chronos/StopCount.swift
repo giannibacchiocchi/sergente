@@ -32,17 +32,12 @@ class StopCount : NSObject {
     
     fileprivate var timer = Timer()
     fileprivate var startTime = TimeInterval(0)
-    fileprivate var accumulatedTime = TimeInterval(0)
     fileprivate var elapsedSinceLastRefresh = TimeInterval(0)
+    fileprivate var totalElapsed = TimeInterval(0)
     
  //   static let sharedInstance = StopCount()
-    
-    open var elapsedTime: TimeInterval {
-        return elapsedSinceLastRefresh + accumulatedTime
-    }
-
-    
-    open var refreshInterval = TimeInterval(1)
+        
+    open var refreshInterval = TimeInterval(0.01)
     
     
     open func start() {
@@ -53,26 +48,33 @@ class StopCount : NSObject {
                                          userInfo: nil,
                                          repeats: true)
             
+
             startTime = Date.timeIntervalSinceReferenceDate
+        
         }
 
+        
     }
     
     open func stop() {
         timer.invalidate()
-        accumulatedTime = elapsedTime
+        totalElapsed = elapsedSinceLastRefresh
         elapsedSinceLastRefresh = 0
     }
     
     open func reset() {
         timer.invalidate()
         elapsedSinceLastRefresh = 0
-        accumulatedTime = 0        
+        totalElapsed = 0
     }
 
     func refreshTime() {
         let refreshTime = Date.timeIntervalSinceReferenceDate
-        self.elapsedSinceLastRefresh = (refreshTime - startTime)        
+   //     print("startTime:",startTime)
+   //     print("refreshTime:",refreshTime)
+        self.elapsedSinceLastRefresh = (refreshTime - startTime) + totalElapsed
+
+        
         NotificationCenter.default.post(name: Notification.Name(rawValue: TimerUpdated), object: self)
     
     }

@@ -24,7 +24,7 @@ class StopCountVC: UIViewController {
     
     @IBOutlet weak var buttonStart: RoundButton!
     @IBOutlet weak var buttonReset: RoundButton!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var labelDisplay: UILabel!
     
 
     let stopCount = StopCount.sharedInstance
@@ -34,12 +34,11 @@ class StopCountVC: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(StopCountVC.updateNotificationSentLabel), name: NSNotification.Name(rawValue: TimerUpdated), object: stopCount)
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
     
@@ -54,7 +53,6 @@ class StopCountVC: UIViewController {
             aStato = Stato.START
             buttonReset.isEnabled = false
             stopCount.start()
-          //  label.text = "99:99:99"
             break
         case .START:
             buttonStart.fillColor = UIColor.black
@@ -72,7 +70,7 @@ class StopCountVC: UIViewController {
             buttonStart.label = "STOP"
             aStato = Stato.START
             buttonReset.isEnabled = false
-            stopCount.start()            
+            stopCount.start()
             break
         default:
             print("buttonStart:", aStato)
@@ -95,27 +93,43 @@ class StopCountVC: UIViewController {
         
         buttonReset.isEnabled = false
         
-        
-        label.text = "00:00:00"
+        stopCount.reset()
+        labelDisplay.text = "00:00.00"
         
     }
         
     
     open func updateNotificationSentLabel() {
         
-        var ti = NSInteger(stopCount.getTimer())
- //       var ms = Int((stopCount.getTimer().truncatingRemainder(dividingBy: 1)) * 1000)
-        
-        var seconds = ti % 60
-        var minutes = (ti / 60) % 60
-        var hours = (ti / 3600)
-        
 
- //       let label = String(format: "%0.2d:%0.2d:%0.2d.%0.3d",hours,minutes,seconds,ms)
-          label.text = String(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
+        var label1 = ""
+        //calculate the minutes in elapsed time.
         
-
-  //      print("label:", label)
+        var elapsedTime: TimeInterval = stopCount.getTimer()
+        
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (TimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= TimeInterval(seconds)
+        
+        //find out the fraction of milliseconds to be displayed.
+        let fraction = UInt8(elapsedTime * 100)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        let strFraction = String(format: "%02d", fraction)
+        
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        label1 = "\(strMinutes):\(strSeconds).\(strFraction)"
+        print("label1:", label1)
+        
+  //      label.text = label1
+        
+        labelDisplay.text = "\(strMinutes):\(strSeconds).\(strFraction)"
         
  
     }
